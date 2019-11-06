@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (max-width: 600px) {
+  .header_link { display: block; }  
+}
+.heading {  
+border: 5px dashed red; 
+display: block;
+background-color: rgb(129, 230, 213);
+} 
+body {
+background-color: rgb(226, 198, 43);
+}
+.brand-name {
+font-size: 2em;  
+font-family: fantasy;
+color: rgb(163, 8, 168);
+text-shadow: 3px  2px blue;
+}
+.welcome{
+  font-size: 2em;  
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+color: rgb(168, 8, 8);
+text-shadow: 3px  2px rgb(145, 255, 0);
+text-align: center;
+}
+.logo {
+  width: 180;
+  height: 150;    
+} 
+.anchor-center{
+  text-align: center;
+  padding: 30px;
+  color:purple;
+}    
+.tab{
+  text-align: justify;
+  text-indent: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: monospace;
+  color: rgb(4, 114, 4);
+  font-size: 25px;
+}
+.shop-left{
+  width: 50%;
+  float: left;
+  height: 90%;
+  margin-right: 20px;
+}
+.shop-right{
+  width: 50%;
+  float: right;
+  height: 90%;
+  margin-left: 20px;
+}
+
+
