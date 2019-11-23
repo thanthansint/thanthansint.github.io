@@ -1,0 +1,15 @@
+@import "colors";
+
+@mixin grid-layout($width) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: $width;
+}
+@mixin adjust-center($dis, $left, $right, $top, $bottom) {
+    display: $dis;
+    margin-left: $left;
+    margin-right: $right;
+    margin-top: $top;
+    margin-bottom: $bottom;
+  }

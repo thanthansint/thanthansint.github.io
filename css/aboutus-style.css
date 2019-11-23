@@ -2,59 +2,306 @@
   padding: 0;
   margin: 0;
 }
-@media only screen and (max-width: 600px) {
-  .header_link { display: block; }  
+
+.page-container {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: minmax(20vh, auto) minmax(70vh, auto) minmax(10vh, auto);
+      grid-template-rows: minmax(20vh, auto) minmax(70vh, auto) minmax(10vh, auto);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
-.heading {  
-border: 5px dashed red; 
-display: block;
-background-color: rgb(129, 230, 213);
-} 
-body {
-background-color: rgb(226, 198, 43);
+
+.heading-container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-grid-rows: minmax(10vh, auto) minmax(10vh, auto);
+      grid-template-rows: minmax(10vh, auto) minmax(10vh, auto);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  background-color: #F0D6AD;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -30%;
 }
-.brand-name {
-font-size: 2em;  
-font-family: fantasy;
-color: rgb(163, 8, 168);
-text-shadow: 3px  2px blue;
+
+.logo-frame {
+  width: 100%;
 }
-.welcome{
-  font-size: 2em;  
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
-color: rgb(168, 8, 8);
-text-shadow: 3px  2px rgb(145, 255, 0);
-text-align: center;
-}
+
 .logo {
-  width: 180;
-  height: 150;    
-} 
-.anchor-center{
+  width: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.toggle-heading {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background: #D10000;
+  -ms-grid-columns: (minmax(20vw, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+}
+
+.menu {
+  color: #ffff;
+  padding-left: 5%;
+  padding-right: 7%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.toggle-heading a:hover {
+  background: #514736;
+  padding: 20px;
+}
+
+.menu-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-family: Garamond;
+  font-weight: bold;
+}
+
+.phone-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.menu-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-family: Garamond;
+  font-weight: bold;
+}
+
+.phone-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.content {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.welcome-frame {
+  width: 100%;
+}
+
+.welcome {
+  font-size: 2em;
+  font-family: Garamond;
+  color: #D10000;
+  text-shadow: 3px 2px black;
   text-align: center;
-  padding: 30px;
-  color:purple;
-}    
-.tab{
+  font-weight: bold;
+  padding: 5%;
+}
+
+.about {
+  text-indent: 5%;
   text-align: justify;
-  text-indent: 100px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: monospace;
-  color: rgb(4, 114, 4);
-  font-size: 25px;
+  font-family: black;
+  color: black;
+  font-size: 1.3em;
+  padding-top: 5%;
 }
-.shop-left{
-  width: 50%;
-  float: left;
-  height: 90%;
-  margin-right: 20px;
-}
-.shop-right{
-  width: 50%;
+
+.photo-right {
+  width: 38%;
   float: right;
-  height: 90%;
-  margin-left: 20px;
+  margin-left: 1%;
+  margin-right: 8%;
 }
 
+.photo-left {
+  width: 38%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 8%;
+}
 
+.footer {
+  width: 100%;
+  font-size: 1.5em;
+  font-family: Garamond;
+  background: #D10000;
+  color: white;
+  padding: 2%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .heading-container {
+    width: 100%;
+  }
+  .logo {
+    width: 20%;
+    margin-top: 1%;
+  }
+  .toggle-heading {
+    width: 100%;
+    display: block;
+    background: none;
+  }
+  .menu {
+    text-align: center;
+    margin: 1%;
+    background: #D10000;
+    padding: 0;
+  }
+  .menu-title {
+    font-size: 0.6em;
+  }
+  .desktoptel {
+    display: none;
+  }
+  .content {
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .welcome-frame {
+    font-size: 0.6em;
+  }
+  .photo-right {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+  .photo-left {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+  .about {
+    width: 100%;
+    text-align: center;
+    font-size: 0.6em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-frame {
+    margin-top: 5%;
+    width: 100%;
+  }
+  .footer {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .heading-container {
+    top: -25%;
+  }
+  .logo {
+    width: 23%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(25vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  }
+  .desktoptel {
+    display: none;
+  }
+  .photo-right {
+    width: 45%;
+  }
+  .photo-left {
+    width: 45%;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -30%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(25vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  }
+  .logo {
+    width: 25%;
+  }
+  .menu-title {
+    font-size: 1.5em;
+  }
+  .phone-title {
+    font-size: 1.5em;
+  }
+  .photo-right {
+    width: 40%;
+  }
+  .photo-left {
+    width: 40%;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -40%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(25vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  }
+  .logo {
+    width: 15%;
+  }
+  .menu-title {
+    font-size: 1.5em;
+  }
+  .phone-title {
+    font-size: 1.5em;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 1.8em;
+  }
+}
+/*# sourceMappingURL=aboutus-style.css.map */
