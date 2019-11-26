@@ -21,6 +21,11 @@
     font-family: $font;
     text-align: center;   
   }
+  @mixin font-setting($f-size, $f-type, $f-color) {
+    font-size: $f-size;
+    font-family: $f-type;    
+    color: $f-color;     
+  }
 * {
     padding: 0;
     margin: 0;
@@ -34,7 +39,7 @@
   } 
   .heading-container{    
     @include grid-layout(100%);     
-    grid-template-rows: minmax(10vh, auto) minmax(10vh, auto);
+    grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
     grid-template-columns: 1fr;         
     background-color: $header-background-color; 
     position: sticky;
@@ -66,14 +71,6 @@
    background: $hover-color;
    padding: 20px;
   }
-  /*.toggle-line {
-    color: #ffff;
-    font-size: 40px; 
-    float: left;    
-    padding-left:20%; 
-    padding-top: 20px; 
-    padding-bottom: 20px;
-  }*/  
   .menu-title{    
     text-decoration: none;
     color: $font-border-color;
@@ -90,16 +87,90 @@
   .content {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
-    grid-template-rows: 1fr;
-    justify-items: center;
-    align-items: center;     
+    grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));     
     padding-left: 5%;
     padding-right: 5%;      
   }
+  .pizza-title {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15vh;
+    border-top: 3px solid $body-color;
+    border-bottom: 3px solid $body-color;
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh;   
+  }
+  .pizza-title-setting {   
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 2em;    
+  }
+  .pizza-items {
+    @include grid-layout(100%);
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;   
+  }
+  .wing-title {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15vh;
+    border-top: 3px solid $body-color;
+    border-bottom: 3px solid $body-color;
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .wing-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 2em;     
+  }
+  .wing-items {
+    @include grid-layout(100%);
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;   
+  }
+  .brownie-title {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15vh;
+    border-top: 3px solid $body-color;
+    border-bottom: 3px solid $body-color;
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .brownie-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 2em;     
+  }
+  .brownie-items {
+    @include grid-layout(100%);
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;   
+  }
+
+  /*.title {
+    @include font-setting(2em, $font, $body-color); 
+    border-top: 2px solid $body-color;
+    border-bottom: 2px solid $body-color;
+    text-shadow: 3px  2px $text-color;
+  } */ 
   .order {    
     width: 50%;
-    font-size: 1em; 
+    font-size: 1em;
+    padding-top: 30%; 
   }   
   .order-now {   
     color: $body-color;     
@@ -131,27 +202,26 @@
     width: 90%;
     height: 87%;    
     border: 2px solid $header-background-color;
+    border-radius: 25px;
     margin-left: 10%;  
     margin-right: 10%;
     padding: 2%;
     margin-top: 25%;
+    margin-bottom: 10%;
   }
   .image {
     width: 100%;
     height: 70%;
-    //padding: 1%;
-   // margin-top: 2%;
     display: block;
     margin-bottom: 3%;
     margin-left: auto;
     margin-right: auto;   
   }
   .p-name {
-    @include pizza-text(100%,1em, $text-color, bold, $font);
-    //text-align: center;
+    @include pizza-text(100%, 1.3em, $text-color, bold, $font);   
   }
   .p-description {
-    @include pizza-text(100%, 0.6em, $text-color, none, $font);
+    @include pizza-text(100%, 1em, $text-color, none, $font);
   }
   .price-description {
     @include pizza-text(100%, 1.5em, $body-color, none, $font);
@@ -162,7 +232,8 @@
   .add {
     font-size: 1em;
     text-align: center;     
-    background: $body-color;    
+    background: $body-color;
+    border-radius: 30px;    
     font-family: $font;    
     padding: 15px;          
     color: $font-border-color;
@@ -179,24 +250,32 @@
   }
   @media only screen and (max-width: 767px)
 { 
+  .heading-container {
+    top: -20%;
+  }
 .logo {
   width: 20%; 
-  margin-top: 1%;
-  //margin-bottom: 2%;  
+  margin-top: 1%;  
 }
 .toggle-heading {
   width: 100%;
   display: block;  
   background: none; 
 }
+.toggle-heading a:hover {
+  padding: 8px;
+ }
 .menu {
   text-align: center;
   margin: 1%;
   background: $body-color;
-  padding: 0;
+  padding: 1%;
 }
 .menu-title {
   font-size: 1em;
+}
+.phone-title {
+  font-size: 1.3em;
 }
 .desktoptel {
   display: none;
@@ -204,11 +283,60 @@
 .content {
   display: block;  
 }
+.pizza-title {  
+  margin-top: 8%;    
+  margin-left:3%;
+  height: 10vh;   
+}
+.pizza-title-setting { 
+  color: $text-color;
+  text-align: left; 
+  font-weight: bold; 
+  font-size: 1.5em; 
+  margin-top: 4%; 
+  text-align: center;   
+}
+.pizza-items {
+  display: block;
+}
+.wing-title {  
+  margin-top: 8%;    
+  margin-left:3%;
+  height: 10vh; 
+}
+.wing-title-setting {
+  color: $text-color;
+  text-align: left; 
+  font-weight: bold; 
+  font-size: 1.5em; 
+  margin-top: 4%;  
+  text-align: center;   
+}
+.wing-items {
+  display: block;  
+}
+.brownie-title {
+  margin-top: 8%;    
+  margin-left:3%;
+  height: 10vh; 
+}
+.brownie-title-setting {
+  color: $text-color;
+  text-align: left; 
+  font-weight: bold; 
+  font-size: 1.5em;
+  margin-top: 4%;  
+  text-align: center;   
+}
+.brownie-items {
+  display: block;   
+}
+
 .image-boundary {
   margin-left: auto;
   margin-right: auto;
 }
-.order {
+/*.order {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -221,8 +349,8 @@
 }
 .delivery {  
   margin-top: 0; 
-  font-size: 1.5em;
-}  
+  font-size: 1.2em;
+}  */
 .image {
  width: 100%;
   height: 80%;
@@ -244,7 +372,7 @@
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px)
 { .heading-container {
-  top: -25%;
+  top: -18%;
 }
   .logo {
     width: 23%;
@@ -252,8 +380,14 @@
   .toggle-heading {
     grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
   }
-  .content {    
-    grid-template-columns: repeat(auto-fill, minmax(33vw, 1fr));    
+  .toggle-heading a:hover {
+    padding: 8px;
+   }
+  .content { 
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));     
+    padding-left: 5%;
+    padding-right: 5%;     
   }
   .image {
     width: 80%;
@@ -264,38 +398,67 @@
   }  
   .desktoptel {
     display: none;
-  } 
-  .content {    
-    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));     
+  }   
+  .pizza-title {  
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh;   
   }
-  .image-boundary {
-    width: 80%;
-    height: 88%;
-    margin-left: auto;
-    margin-right: auto;
+  .pizza-title-setting { 
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 4%; 
+    text-align: center;   
   }
-  .order {
-    display: block;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10%;
+  .pizza-items {
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));  
   }
-  .order-now {
-    margin-top: 1%;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .wing-title {  
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
   }
-  .delivery {    
-    margin-top: 0; 
+  .wing-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 4%;  
+    text-align: center;   
+  }
+  .wing-items {
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));   
+  }
+  .brownie-title {
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .brownie-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
     font-size: 1.5em;
+    margin-top: 4%;  
+    text-align: center;   
+  }
+  .brownie-items {
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));   
+  }  
+  .image-boundary {
+    width: 89%;
+    height: 84%;
+    margin-left: auto;
+    margin-right: auto;
   }  
   .image {
    width: 100%;
     height: 30%;
   }
   .pizza-height {
-    height: 35vh;
+    height: 22vh;
   }
   .p-name{
     font-size: 1.5em;
@@ -317,12 +480,14 @@
     display: none;
   }    
   .heading-container {
-    top: -30%;
+    top: -18%;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
-   
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
   }
+  .toggle-heading a:hover {
+    padding: 8px;
+   }
   .logo {
     width: 25%;
   }
@@ -332,24 +497,63 @@
   .phone-title {
     font-size: 1.5em;
   }
-  .content {
-    margin-bottom: 5%;
+  .content { 
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));     
+    padding-left: 5%;
+    padding-right: 5%;     
+  }  
+  .pizza-title {  
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh;   
   }
-  .order {
-    width: 90%;
-    font-size: 1.5em;
+  .pizza-title-setting { 
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 6%; 
+    text-align: center;   
   }
-  .delivery {  
-    width: 90%;
-    margin-top: 0; 
+  .pizza-items {
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));  
+  }
+  .wing-title {  
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .wing-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 6%;  
+    text-align: center;   
+  }
+  .wing-items {
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
+  }
+  .brownie-title {
+    margin-top: 8%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .brownie-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
     font-size: 1.5em;
-  } 
-  .content {    
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));    
+    margin-top: 6%;  
+    text-align: center;   
+  }
+  .brownie-items {
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
   }
   .image-boundary {
-    width: 100%;
-    height: 80%;
+    width: 98%;
+    height: 85%;
     margin-left: auto;
     margin-right: auto;      
   }
@@ -358,19 +562,19 @@
    height: 43%;
   } 
   .pizza-height {
-    height: 22vh;
+    height: 24vh;
   }
   .p-name {
-    font-size: 1.8em;
+    font-size: 2em;
     padding-bottom: 3%;
   }
   .p-description {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-left: auto;
     margin-right: auto;     
   }
   .price-description {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 @media only screen and (min-width:1201px){
@@ -378,19 +582,73 @@
     display: none;
   }
   .heading-container {
-    top: -30%;
+    top: -32%;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
   }
   .logo {
     width: 15%;
   }
   .menu-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .phone-title {
+    font-size: 1.3em;
+  }
+  .content { 
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));     
+    padding-left: 5%;
+    padding-right: 5%;     
+  }  
+  .pizza-title { 
+    margin-top: 4%;    
+    margin-left:3%;
+    height: 10vh;   
+  }
+  .pizza-title-setting { 
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 2%; 
+    //text-align: center;   
+  }
+  .pizza-items {
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));  
+  }
+  .wing-title {  
+    margin-top: 4%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .wing-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-top: 2%;  
+    //text-align: center;   
+  }
+  .wing-items {
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
+  }
+  .brownie-title {
+    margin-top: 4%;    
+    margin-left:3%;
+    height: 10vh; 
+  }
+  .brownie-title-setting {
+    color: $text-color;
+    text-align: left; 
+    font-weight: bold; 
     font-size: 1.5em;
+    margin-top: 2%;  
+    //text-align: center;   
+  }
+  .brownie-items {
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
   }
   .image-boundary {
     width: 90%;
@@ -403,6 +661,6 @@
    height: 70%;
   } 
   .pizza-height {
-    height: 28vh;
+    height: 25vh;
   }
 }

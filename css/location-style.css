@@ -1,1 +1,458 @@
-/* No CSS *//*# sourceMappingURL=location-style.css.map */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.page-container {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: minmax(20vh, auto) minmax(70vh, auto) minmax(10vh, auto);
+      grid-template-rows: minmax(20vh, auto) minmax(70vh, auto) minmax(10vh, auto);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.heading-container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-grid-rows: minmax(10vh, auto) minmax(7vh, auto);
+      grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  background-color: #F0D6AD;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -40%;
+}
+
+.logo-frame {
+  width: 100%;
+}
+
+.logo {
+  width: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.toggle-heading {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background: #D10000;
+  -ms-grid-columns: (minmax(20vw, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+}
+
+.menu {
+  color: #ffff;
+  padding-left: 5%;
+  padding-right: 7%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.toggle-heading a:hover {
+  background: #514736;
+  padding: 20px;
+}
+
+.menu-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-family: Garamond;
+  font-weight: bold;
+}
+
+.phone-title {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.content {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 1%;
+}
+
+.location {
+  width: 100%;
+}
+
+.address-title {
+  width: 100%;
+  font-size: 2em;
+  font-family: Garamond;
+  color: #D10000;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.address {
+  font-size: 1.5em;
+  font-family: Garamond;
+  color: black;
+  text-align: center;
+  padding: 3% 0;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hours {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-top: 2px solid #D10000;
+}
+
+.date-time {
+  font-size: 1em;
+  font-family: Garamond;
+  color: black;
+  font-weight: bold;
+  padding: 1% 0;
+}
+
+.footer {
+  font-size: 1.5em;
+  font-family: Garamond;
+  color: white;
+  width: 100%;
+  background: #D10000;
+  padding: 3% 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .heading-container {
+    top: -25%;
+  }
+  .logo {
+    width: 20%;
+    margin-top: 1%;
+  }
+  .toggle-heading {
+    width: 100%;
+    display: block;
+    background: none;
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+  }
+  .menu {
+    text-align: center;
+    margin: 1%;
+    background: #D10000;
+    padding: 2%;
+  }
+  .menu-title {
+    font-size: 0.6em;
+  }
+  .phone-title {
+    font-size: 1em;
+  }
+  .desktoptel {
+    display: none;
+  }
+  .content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .image {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 5%;
+  }
+  .address-title {
+    font-size: 1.4em;
+  }
+  .location {
+    padding-bottom: 10%;
+  }
+  .address {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .hours {
+    font-size: 1.2em;
+  }
+  .footer-frame {
+    margin-top: 5%;
+    width: 100%;
+  }
+  .footer {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .heading-container {
+    top: -15%;
+  }
+  .logo {
+    width: 23%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(25vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+  }
+  .desktoptel {
+    display: none;
+  }
+  .content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .menu-title {
+    font-size: 1.5em;
+  }
+  .phone-title {
+    font-size: 1.7em;
+  }
+  .image {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 5%;
+  }
+  .address-hours {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  .location {
+    width: 100%;
+    margin: 10% 0 0 2%;
+  }
+  .address-title {
+    font-size: 2.4em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  .address {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 2%;
+    font-size: 1.4em;
+  }
+  .hours {
+    width: 100%;
+    border-top: none;
+    border-left: 2px solid #D10000;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .date-time {
+    font-size: 1.5em;
+    font-family: Garamond;
+    color: black;
+    font-weight: bold;
+    padding: 1% 0;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -17%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(25vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+  }
+  .logo {
+    width: 25%;
+  }
+  .menu-title {
+    font-size: 1.8em;
+  }
+  .phone-title {
+    font-size: 2em;
+  }
+  .content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .image {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 2%;
+  }
+  .address-hours {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  .location {
+    width: 100%;
+    margin: 10% 0 0 2%;
+  }
+  .address-title {
+    font-size: 2.8em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  .address {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 2%;
+    font-size: 1.8em;
+  }
+  .hours {
+    width: 100%;
+    border-top: none;
+    border-left: 2px solid #D10000;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .date-time {
+    font-size: 1.5em;
+    font-family: Garamond;
+    color: black;
+    font-weight: bold;
+    padding: 1% 0;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -32%;
+  }
+  .toggle-heading {
+    -ms-grid-columns: (minmax(20vw, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  }
+  .logo {
+    width: 15%;
+  }
+  .menu-title {
+    font-size: 1.5em;
+  }
+  .phone-title {
+    font-size: 1.5em;
+  }
+  .address-hours {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  .location {
+    width: 100%;
+    margin: 10% 0 0 2%;
+  }
+  .address-title {
+    font-size: 2.8em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  .address {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 2%;
+    font-size: 1.8em;
+  }
+  .hours {
+    width: 100%;
+    border-top: none;
+    border-left: 2px solid #D10000;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .date-time {
+    font-size: 1.5em;
+    font-family: Garamond;
+    color: black;
+    font-weight: bold;
+    padding: 1% 0;
+  }
+  .footer-frame {
+    margin-top: 5%;
+  }
+  .footer {
+    font-size: 1.8em;
+  }
+}
+/*# sourceMappingURL=location-style.css.map */

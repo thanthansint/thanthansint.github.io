@@ -13,10 +13,15 @@
   margin-top: $top;
   margin-bottom: $bottom;
 }
-
+@mixin block-display() {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
   .page-container {
     width: 100%;
@@ -26,7 +31,7 @@
 } 
 .heading-container{    
   @include grid-layout(100%);     
-  grid-template-rows: minmax(10vh, auto) minmax(10vh, auto);
+  grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
   grid-template-columns: 1fr;         
   background-color: $header-background-color; 
   position: sticky;
@@ -42,7 +47,7 @@
 .toggle-heading{
   @include grid-layout(100%);  
   background: #D10000;        
-  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));     
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));     
 }   
 .menu {
   color: #ffff;   
@@ -61,6 +66,7 @@
   font-size: 1em; 
   font-family: $font;
   font-weight: bold; 
+  padding: 2%;
 }   
 .phone-title {
   text-decoration: none;
@@ -68,58 +74,85 @@
   font-size: 1em;  
   font-weight: bold;
 }  
-.menu-title{    
-  text-decoration: none;
-  color: $font-border-color;
-  font-size: 1em; 
-  font-family: $font;
-  font-weight: bold; 
-}   
-.phone-title {
-  text-decoration: none;
-  color: $font-border-color;
-  font-size: 1em;  
-  font-weight: bold;
-} 
-.content {
-  //height: minmax(70vh,auto);
-  //@include grid-layout(100%);  
-  //grid-template-columns: 1fr;
-  //grid-template-rows: repeat(auto-fill, minmax(70vh, 1fr));
-   margin-left: 5%;  
-   margin-right: 5%; 
+.image {
+  @include adjust-center(block, 0, 0, 0, 1%);
 }
+.image-size {
+  width: 100%;     
+}  
 .welcome-frame {
   width: 100%;
 }
 .welcome{  
-  font-size: 2em;  
+  font-size: 2.8em;  
   font-family: $font;
   color: $body-color;
   text-shadow: 3px  2px $text-color;
   text-align: center;
   font-weight: bold;
-  padding: 5%;  
+  padding-top: 5%;  
+}
+.row {
+  @include grid-layout(100%);
+  grid-template-columns: minmax(15vw, 1fr) minmax(80vw, 1fr);  
+  grid-template-rows: 1fr;
+}
+
+.side-image {
+  width: 100%;
+  @include block-display();
+ // height: 20%;
+  
+ margin-bottom: 3%;
+ //border: 1px solid $body-color;
+}
+.column-right {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.sub-row1,.sub-row2,.sub-row3,.sub-row4 {
+  @include grid-layout(80%);
+  grid-template-columns: repeat(2, minmax(35vw, 1fr));
+  grid-template-rows: 1fr;
 }
 .about{
-  text-indent: 5%;
+  width: 100%;
+  text-indent: 10%;  
   text-align: justify;   
   font-family: $text-color;
   color: $text-color;
-  font-size: 1.3em; 
-  padding-top: 5%;
+  font-size: 1.3em;     
 }
-.photo-right{
-  width: 38%;
-  float: right;
-  margin-left: 1%;
-  margin-right: 8%;
+
+.sub-row1 img {
+  @include block-display();
 }
-.photo-left{
-  width: 38%;
-  float: left;
-  margin-left: 1%;
-  margin-right: 8%;
+.sub-row2 img {
+  @include block-display();
+}
+.sub-row3 img {
+  @include block-display();
+}
+.sub-row4 img {
+  @include block-display();
+}
+.p1 {
+  margin-top: 10%;
+  width: 60%; 
+  margin-bottom: 5%;  
+}
+.p2 {
+  //margin-top: 5%;
+  width:100%; 
+  margin-bottom: 5%;
+}
+.p3 {
+  width: 110%;
+  margin-top: 15%;
+}
+.p4 {
+  width: 60%;
+  margin-top: 5%;  
 }
 .footer {
   width: 100%;
@@ -134,6 +167,7 @@
 { 
 .heading-container {
   width: 100%;
+  top: -22%;
 }
 .logo {
   width: 20%; 
@@ -144,92 +178,188 @@
   display: block;  
   background: none; 
 }
+.toggle-heading a:hover {
+  padding: 8px;
+ }
 .menu {
   text-align: center;
   margin: 1%;
   background: $body-color;
-  padding: 0;
+  padding: 2%;
 }
 .menu-title {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 .desktoptel {
   display: none;
 } 
-.content {
-  display: block;
-  margin-left: 5%;
-  margin-right: 5%;
-}
 .welcome-frame {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
-.photo-right {
-  float: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
+.welcome{
+  font-weight: bold;
+  padding-bottom: 10%;
 }
-.photo-left {
-  float: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
+.column-left {
+  display: none;
 }
-.about {
+.column-right {
+  @include grid-layout(100%);
+  grid-template-columns: 1fr;  
+  grid-template-rows: repeat(auto-fill, minmax(20vh, 1fr));
+  justify-items: center;
+  align-items: center; 
+}
+.sub-row1, .sub-row2, .sub-row3, .sub-row4 {
+  display: grid; 
+  width: 100%;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(2, minmax(20vh, 1fr));  
+}
+.sub-row1 div{
+  grid-column: 1;
+}
+.sub-row1 div:nth-last-of-type(1){  
+  grid-row: 2;
+}
+.sub-row1 div:nth-last-of-type(2){  
+  grid-row: 1;
+}
+.sub-row2 div{
+  grid-column: 1;
+}
+.sub-row2 div:nth-last-of-type(1){  
+  grid-row: 1;
+}
+.sub-row2 div:nth-last-of-type(2){  
+  grid-row: 2;
+}
+.sub-row3 div{
+  grid-column: 1;
+}
+.sub-row3 div:nth-last-of-type(1){  
+  grid-row: 2;
+}
+.sub-row3 div:nth-last-of-type(2){  
+  grid-row: 1;
+}
+.sub-row4 div{
+  grid-column: 1;
+}
+.sub-row4 div:nth-last-of-type(1){  
+  grid-row: 1;
+}
+.sub-row4 div:nth-last-of-type(2){  
+  grid-row: 2;
+}
+.p1 { 
+  width: 45%;   
+}
+.p2 { 
+  width: 65%; 
+}
+.p3 {
+  width: 80%; 
+  padding-bottom: 10%;
+}
+.p4 {
+  width: 45%; 
+}
+.about {   
   width: 100%;
   text-align: center;
-  font-size: 0.6em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 1em;
 }
-.footer-frame {
-  margin-top: 5%;  
-  width: 100%;
-}
+
 .footer{
+  margin-top: 10%;
   font-size: 1.2em;
 }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px)
 { .heading-container {
-  top: -25%;
+  top: -15%;
 }
   .logo {
     width: 23%;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));   
   }
+  .toggle-heading a:hover {
+    padding: 8px;
+   }
+  .menu-title {
+    font-size: 1.1em;
+  }   
   .desktoptel {
     display: none;
   }
-  .photo-right {
-    width: 45%;    
+  .welcome {
+    margin-bottom: 10%;
   } 
-  .photo-left {
-    width: 45%;
+  .column-left {
+   // width: 10vw;
+    //height: 100%;
+    display: none;
+  }  
+  .column-right {
+    @include grid-layout(100%);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center; 
   }
-  .footer-frame {
-    margin-top: 5%;  
-    //width: 100%;
+  .side-image {
+    padding-top: 15%;
+    padding-bottom: 25%;
+  }
+  .sub-row1, .sub-row2, .sub-row3, .sub-row4 {
+    //width: 100vw;
+    @include grid-layout(90vw);
+    grid-template-columns: repeat(2, minmax(30vw, 1fr));
+    justify-items: center;
+    align-items: center;
+    margin-left: 5%;
+  }
+  .p1 { 
+    width: 75%;   
+  }
+  .p2 { 
+    width: 95%; 
+  }
+  .p3 {
+    width: 100%; 
+    padding-bottom: 10%;
+  }
+  .p4 {
+    width: 70%; 
+  }
+  .about {
+    font-size: 1.4em;
+    text-align: justify;    
   }
   .footer{
-    font-size: 1.5em;
+    margin-top: 5%;
+    width: 100%;
+    font-size: 1.8em;
   }
 }
 @media only screen and (min-width:1024px) and (max-width: 1200px) {
-  .mobiletel {
-    display: none;
-  }    
+      
   .heading-container {
-    top: -30%;
+    width: 100%;
+    top: -18%;
   } 
   .toggle-heading {
     grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
-  } 
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+   } 
   .logo {
     width: 25%;
   }
@@ -238,18 +368,51 @@
   }
   .phone-title {
     font-size: 1.5em;
+  }    
+  .desktoptel {
+    display: none;
+  }   
+  .image {
+    @include adjust-center(block, 0, 0, 0, 1%);
   }
-  .photo-right {
-    width: 40%;    
+  .image-size {
+    width: 100%;     
   } 
-  .photo-left {
-    width: 40%;
+  .welcome {
+    margin-bottom: 10%;
+  } 
+  .column-left {
+    width: 20vw;
+    padding-left: 15%;
   }
-  .footer-frame {
-    margin-top: 5%;  
-    //width: 100%;
+  .side-image {
+    padding-top: 15%;
+    padding-bottom: 25%;
+  }
+  .sub-row1, .sub-row2, .sub-row3, .sub-row4 {
+    //width: 80vw;
+    @include grid-layout(90%);
+    grid-template-columns: repeat(2, minmax(35vw, 1fr));
+  }
+  .p1 { 
+    width: 60%;   
+  }
+  .p2 { 
+    width: 80%; 
+  }
+  .p3 {
+    width: 95%; 
+    padding-bottom: 10%;
+  }
+  .p4 {
+    width: 70%; 
+  }
+  .about {
+    font-size: 1.6em;
   }
   .footer{
+    margin-top: 5%;
+    width: 100%;
     font-size: 1.8em;
   }
 }
@@ -258,24 +421,21 @@
     display: none;
   }
   .heading-container {
-    top: -40%;
+    top: -33%;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));   
   }
   .logo {
     width: 15%;
   }
   .menu-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .phone-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
-  .footer-frame {
-    margin-top: 5%;  
-    //width: 100%;
-  }
+  
   .footer{
     font-size: 1.8em;
   }
