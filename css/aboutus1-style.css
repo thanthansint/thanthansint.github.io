@@ -23,8 +23,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  -ms-grid-rows: minmax(10vh, auto) minmax(5vh, auto);
-      grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
+  -ms-grid-rows: minmax(10vh, auto) minmax(4vh, auto);
+      grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   background-color: #F1D6AD;
@@ -188,9 +188,9 @@
 
 @media only screen and (max-width: 767px) {
   .heading-container {
-    -ms-grid-rows: minmax(10vh, auto) minmax(5vh, auto);
-        grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
-    top: -4%;
+    -ms-grid-rows: minmax(10vh, auto) minmax(4vh, auto);
+        grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
+    top: -12%;
   }
   .logo {
     width: 20%;
@@ -256,7 +256,9 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .heading-container {
-    top: -10%;
+    -ms-grid-rows: minmax(10vh, auto) minmax(4vh, auto);
+        grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
+    top: -14%;
   }
   .logo {
     width: 20%;
@@ -317,7 +319,9 @@
 
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
   .heading-container {
-    top: -13%;
+    -ms-grid-rows: minmax(10vh, auto) minmax(4vh, auto);
+        grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
+    top: -17%;
   }
   .toggle-heading {
     -ms-grid-columns: (minmax(18vw, 1fr))[auto-fill];

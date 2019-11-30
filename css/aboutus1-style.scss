@@ -31,7 +31,7 @@
 } 
 .heading-container{    
   @include grid-layout(100%);     
-  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
+  grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
   grid-template-columns: 1fr;         
   background-color: $header-background-color; 
   position: sticky;
@@ -152,8 +152,8 @@
 @media only screen and (max-width: 767px)
 { 
 .heading-container {  
-  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
-  top: -4%;
+  grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
+  top: -12%;
 }
 .logo {
   width: 20%;  
@@ -218,7 +218,8 @@
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px)
 { .heading-container {
-  top: -10%;
+  grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
+  top: -14%;
 }
   .logo {
     width: 20%;
@@ -273,8 +274,9 @@
 }
 @media only screen and (min-width:1024px) and (max-width: 1200px) {
       
-  .heading-container {    
-    top: -13%;
+  .heading-container {  
+    grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);  
+    top: -17%;
   } 
   .toggle-heading {
     grid-template-columns: repeat(auto-fill, minmax(18vw, 1fr));   

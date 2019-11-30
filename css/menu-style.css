@@ -23,14 +23,15 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  -ms-grid-rows: minmax(10vh, auto) minmax(7vh, auto);
-      grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
+  -ms-grid-rows: minmax(10vh, auto) minmax(4vh, auto);
+      grid-template-rows: minmax(10vh, auto) minmax(4vh, auto);
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   background-color: #F1D6AD;
   position: -webkit-sticky;
   position: sticky;
-  top: -22%;
+  top: -17vh;
+  z-index: 5;
 }
 
 .logo-frame {
@@ -298,7 +299,7 @@
 
 .image {
   width: 90%;
-  height: 83%;
+  height: 75%;
   display: block;
   margin-bottom: 3%;
   margin-left: auto;
@@ -334,7 +335,7 @@
 }
 
 .pizza-height {
-  height: 38vh;
+  height: 47vh;
 }
 
 .add {
@@ -364,7 +365,7 @@
 
 @media only screen and (max-width: 767px) {
   .heading-container {
-    top: -33%;
+    top: -36%;
   }
   .logo {
     width: 20%;
@@ -395,7 +396,7 @@
     display: block;
   }
   .pizza-title {
-    margin-top: 2%;
+    margin-top: 15%;
     height: 10vh;
   }
   .pizza-title-setting {
@@ -459,7 +460,7 @@
     margin-right: auto;
   }
   .pizza-height {
-    height: 45vh;
+    height: 48vh;
   }
   .image {
     width: 90%;
@@ -793,6 +794,7 @@
     font-size: 1.5em;
   }
   .delivery {
+    width: 20vw;
     font-size: 2em;
   }
 }
@@ -836,7 +838,7 @@
         grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
   }
   .pizza-height {
-    height: 40vh;
+    height: 25vh;
   }
   .add {
     margin-top: 25%;
