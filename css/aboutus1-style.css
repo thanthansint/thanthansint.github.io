@@ -76,7 +76,7 @@
   text-decoration: none;
   color: white;
   font-size: 1.1em;
-  font-family: Cursive;
+  font-family: serif;
   font-weight: bold;
 }
 
@@ -115,7 +115,7 @@
 
 .welcome {
   font-size: 2.8em;
-  font-family: Cursive;
+  font-family: serif;
   color: #CF0101;
   text-shadow: 3px 2px black;
   text-align: center;
@@ -153,7 +153,7 @@
 .sub-title {
   font-size: 1.5em;
   color: #CF0101;
-  font-family: Cursive;
+  font-family: serif;
   font-weight: bolder;
   padding: 5%;
   text-align: center;
@@ -169,7 +169,7 @@
 .text1, .text2 {
   font-size: 1.4em;
   color: black;
-  font-family: Cursive;
+  font-family: serif;
   padding: 10%;
   text-align: left;
   margin-left: 5%;
@@ -179,7 +179,7 @@
 .footer {
   width: 100%;
   font-size: 1.5em;
-  font-family: Cursive;
+  font-family: serif;
   background: #CF0101;
   color: white;
   padding: 2%;

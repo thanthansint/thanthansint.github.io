@@ -43,7 +43,7 @@
     grid-template-columns: 1fr;         
     background-color: $header-background-color; 
     position: sticky;
-    top: -16%;
+    top: -22%;
   }
   .logo-frame {
     width: 100%;
@@ -276,7 +276,7 @@
   @media only screen and (max-width: 767px)
 { 
   .heading-container {
-    top: -10%;
+    top: -33%;
   }
 .logo {
   width: 20%; 

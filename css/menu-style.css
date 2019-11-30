@@ -30,7 +30,7 @@
   background-color: #F1D6AD;
   position: -webkit-sticky;
   position: sticky;
-  top: -16%;
+  top: -22%;
 }
 
 .logo-frame {
@@ -76,7 +76,7 @@
   text-decoration: none;
   color: white;
   font-size: 1.1em;
-  font-family: Cursive;
+  font-family: serif;
   font-weight: bold;
 }
 
@@ -250,7 +250,7 @@
   color: #CF0101;
   font-size: 1.4em;
   font-weight: bold;
-  font-family: Cursive;
+  font-family: serif;
   text-align: center;
   display: inline-block;
   margin-left: 0;
@@ -279,7 +279,7 @@
   width: 15%;
   background: #CF0101;
   border-radius: 25px;
-  font-family: Cursive;
+  font-family: serif;
   padding: 15px;
   color: white;
   font-size: 1.2em;
@@ -311,7 +311,7 @@
   font-size: 1.3em;
   color: black;
   font-weight: bold;
-  font-family: Cursive;
+  font-family: serif;
   text-align: center;
 }
 
@@ -320,7 +320,7 @@
   font-size: 1em;
   color: #514736;
   font-weight: bold;
-  font-family: Cursive;
+  font-family: serif;
   text-align: center;
 }
 
@@ -329,7 +329,7 @@
   font-size: 1em;
   color: #CF0101;
   font-weight: bold;
-  font-family: Cursive;
+  font-family: serif;
   text-align: center;
 }
 
@@ -343,7 +343,7 @@
   text-align: center;
   background: #CF0101;
   border-radius: 20px;
-  font-family: Cursive;
+  font-family: serif;
   padding: 13px;
   color: white;
   margin-top: 25%;
@@ -354,7 +354,7 @@
 .footer {
   width: 100%;
   font-size: 1.5em;
-  font-family: Cursive;
+  font-family: serif;
   background: #CF0101;
   color: white;
   padding: 20px;
@@ -364,7 +364,7 @@
 
 @media only screen and (max-width: 767px) {
   .heading-container {
-    top: -10%;
+    top: -33%;
   }
   .logo {
     width: 20%;
@@ -626,7 +626,7 @@
     color: #CF0101;
     font-size: 1.4em;
     font-weight: bold;
-    font-family: Cursive;
+    font-family: serif;
     text-align: center;
     display: inline-block;
     margin-left: 0;
@@ -652,7 +652,7 @@
     text-decoration: none;
     text-align: center;
     background: #CF0101;
-    font-family: Cursive;
+    font-family: serif;
     padding: 15px;
     color: white;
     font-size: 1.2em;

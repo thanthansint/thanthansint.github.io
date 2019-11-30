@@ -74,7 +74,7 @@
   text-decoration: none;
   color: white;
   font-size: 1.1em;
-  font-family: Cursive;
+  font-family: serif;
   font-weight: bold;
 }
 
@@ -112,7 +112,7 @@
 .message {
   font-size: 3em;
   color: #CF0101;
-  font-family: Cursive;
+  font-family: serif;
   font-weight: bolder;
   padding-top: 5%;
   padding-bottom: 6%;
@@ -128,7 +128,7 @@
 .address-title {
   width: 100%;
   font-size: 2em;
-  font-family: Cursive;
+  font-family: serif;
   color: #CF0101;
   margin-top: 15%;
   margin-bottom: 10%;
@@ -138,7 +138,7 @@
 
 .address {
   font-size: 1.5em;
-  font-family: Cursive;
+  font-family: serif;
   color: black;
   text-align: center;
   padding: 3% 0;
@@ -161,7 +161,7 @@
 
 .date-time {
   font-size: 1em;
-  font-family: Cursive;
+  font-family: serif;
   color: black;
   font-weight: bold;
   padding: 1% 0;
@@ -169,7 +169,7 @@
 
 .footer {
   font-size: 1.5em;
-  font-family: Cursive;
+  font-family: serif;
   color: white;
   width: 100%;
   background: #CF0101;
@@ -335,7 +335,7 @@
   }
   .date-time {
     font-size: 1.2em;
-    font-family: Cursive;
+    font-family: serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;
@@ -421,7 +421,7 @@
   }
   .date-time {
     font-size: 1.5em;
-    font-family: Cursive;
+    font-family: serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;
@@ -491,7 +491,7 @@
   }
   .date-time {
     font-size: 1.5em;
-    font-family: Cursive;
+    font-family: serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;
