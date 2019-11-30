@@ -1,4 +1,4 @@
-@import "colors";
+@import "_colors";
 
 @mixin grid-layout($width) {
     display: grid;
@@ -25,35 +25,35 @@
   .page-container {
     width: 100%;
     display: grid;
-    grid-template-rows: minmax(20vh,auto) minmax(70vh, auto) minmax(10vh, auto);
+    grid-template-rows: minmax(10vh,auto) minmax(70vh, auto) minmax(10vh, auto);
     grid-template-columns: 1fr;
 } 
 .heading-container{    
   @include grid-layout(100%);     
-  grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
+  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
   grid-template-columns: 1fr;         
   background-color: $header-background-color; 
   position: sticky;
-  top: -40%;
+  top: -16%;
 }
 .logo-frame {
   width: 100%;
 }
 .logo {
-  width: 10%;   
-  @include adjust-center(block, auto, auto, 5px, 5px);       
+  width: 8%;   
+  @include adjust-center(block, auto, auto, 5px, 1px);       
 }
 .toggle-heading{
   @include grid-layout(100%);  
   background: #D10000;        
-  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));     
+  grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));     
 }   
 .menu {
   color: #ffff;   
   padding-left: 5%;
   padding-right:7%; 
-  padding-top: 20px; 
-  padding-bottom: 20px;   
+  padding-top: 10px; 
+  padding-bottom: 10px;   
 }
 .toggle-heading a:hover {
  background: $hover-color;
@@ -62,32 +62,51 @@
 .menu-title{    
   text-decoration: none;
   color: $font-border-color;
-  font-size: 1em; 
+  font-size: 1.1em; 
   font-family: $font;
   font-weight: bold; 
 }   
 .phone-title {
   text-decoration: none;
   color: $font-border-color;
-  font-size: 1em;  
+  font-size: 1.2em;  
   font-weight: bold;
 }  
-
 .content {
    margin-left: 0;  
    margin-right: 0; 
 }
 .image {
-    width: 100%;
+    width: 90vw;
+    height: 80vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 1%;
 }
+.map {
+  width: 90vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+.message {  
+  font-size: 3em;
+  color: $body-color;
+  font-family: $font;
+  font-weight: bolder;
+  padding-top: 5%;
+  padding-bottom: 6%;
+  text-align: center;
+}
 .location {
     width: 100%;
-}
+    padding-top: 10%;
+    border-left: 2px solid $body-color;
+}   
 .address-title {
     width: 100%;
     @include font-setting(2em,$font,$body-color);     
@@ -105,15 +124,16 @@
 }
 .hours {
     width: 100%;  
+    padding-top: 10%;
     margin-left: auto;
     margin-right: auto;  
     text-align: center;
-    border-top: 2px solid $body-color;
+    margin-bottom: 20%; 
 }
 .date-time {
     @include font-setting(1em,$font,$text-color);
     font-weight: bold;
-    padding: 1% 0;
+    padding: 1% 0;     
 }
 .footer {
     @include font-setting(1.5em,$font,$font-border-color);
@@ -125,11 +145,12 @@
   @media only screen and (max-width: 767px)
   { 
   .heading-container {
-    top: -25%;
+    top: -10%;
   }
   .logo {
     width: 20%; 
-    margin-top: 1%;   
+    margin-top: 1%;
+    margin-bottom: 1%;  
   }
   .toggle-heading {
     width: 100%;
@@ -143,20 +164,24 @@
     text-align: center;
     margin: 1%;
     background: $body-color;
-    padding: 2%;
+    padding: 5px;
   }
   .menu-title {
-    font-size: 0.6em;
-  }
-  .phone-title {
     font-size: 1em;
-  }
+  }  
   .desktoptel {
     display: none;
   } 
   .content {
     margin-left: 1%;
     margin-right: 1%;
+  }
+  .message {  
+    font-size: 1.8em; 
+    padding-bottom: 15%;   
+  }
+  .map {
+    height: 30vh;
   }
   .image {
     width: 100%;
@@ -167,16 +192,18 @@
       font-size: 1.4em;
   }
   .location{
-    padding-bottom: 10%;
+    padding-top: 5%;
+    border-top: 2px solid $body-color;
+    border-left: none;
   }
   .address {
-    @include adjust-center(block, auto, auto, 0, 0); 
+    @include adjust-center(block, auto, auto, 0, 20%); 
     font-size: 1.2em; 
     padding-left: 5%;
     padding-right: 5%;   
   }
   .hours {
-      font-size: 1.2em;
+      font-size: 1.2em;      
   }
   .footer-frame {
     margin-top: 5%;  
@@ -188,10 +215,10 @@
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px)
 { .heading-container {
-  top: -15%;
+  top: -14%;
 }
   .logo {
-    width: 23%;
+    width: 20%;
   }
   .toggle-heading {
     grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
@@ -203,19 +230,31 @@
     display: none;
   }
   .content {
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
   .menu-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .phone-title {
-    font-size: 1.7em;
+    font-size: 1.2em;
   }
   .image {
     width: 100%;
     height: 30%;
     margin-bottom: 5%;
+  }
+  .map {
+    width: 60%;
+    height: 30%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 10%;
+  }
+  .message {
+    margin-bottom: 3%;
   }
   .address-hours {
     display: grid;
@@ -223,7 +262,9 @@
 }
 .location {
   width: 100%;
-  margin: 10% 0 0 2%;
+  margin: 2% 0 0 2%;
+  padding-top: 20%;
+  border-left: 2px solid $body-color;
 }
 .address-title {
     font-size: 2.4em;
@@ -231,17 +272,17 @@
 }
 .address {      
   @include adjust-center(block, auto, auto, 0, 2%); 
-  font-size: 1.4em;   
+  font-size: 1.4em;  
+  margin: 0 3%; 
 }
 .hours {
   width: 100%;
-  border-top: none;
-  border-left: 2px solid $body-color;
+  border-top: none;  
   justify-items: center;
   align-items: center;
 }
 .date-time {
-  @include font-setting(1.5em,$font,$text-color);
+  @include font-setting(1.2em,$font,$text-color);
   font-weight: bold;
   padding: 1% 0;
 }
@@ -253,7 +294,7 @@
   }
 }
 @media only screen and (min-width:1024px) and (max-width: 1200px) {
-    .mobiletel {
+    .desktoptel {
       display: none;
     }    
     .heading-container {
@@ -269,14 +310,17 @@
       width: 25%;
     }
     .menu-title {
-      font-size: 1.8em;
+      font-size: 1.5em;
     }
     .phone-title {
-      font-size: 2em;
+      font-size: 1.5em;
     }
     .content {
         margin-left: 1%;
         margin-right: 1%;
+      }
+      .message {
+        font-size: 4em;
       }
     .image {
         width: 100%;
@@ -289,7 +333,8 @@
       }
     .location {
         width: 100%;
-       margin: 10% 0 0 2%;
+       margin: 2% 0 0 2%;
+       padding-top: 20%;
       }
       .address-title {
           font-size: 2.8em;
@@ -301,8 +346,9 @@
       }
       .hours {
         width: 100%;
+        padding-top: 10%;
         border-top: none;
-        border-left: 2px solid $body-color;
+       // border-left: 2px solid $body-color;
         justify-items: center;
         align-items: center;
       }
@@ -315,7 +361,7 @@
         margin-top: 5%; 
       }
       .footer{
-        font-size: 2.5em;
+        font-size: 2em;
       }
 }
 @media only screen and (min-width:1201px){
@@ -324,19 +370,19 @@
       display: none;
     }
     .heading-container {
-      top: -32%;
+      top: -16%;
     }
     .toggle-heading {
       grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
     }
     .logo {
-      width: 15%;
+      width: 8%;
     }
     .menu-title {
-      font-size: 1.5em;
+      font-size: 1.1em;
     }
     .phone-title {
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
     .address-hours {
       display: grid;
@@ -344,14 +390,14 @@
   }
 .location {
     width: 100%;
-   margin: 10% 0 0 2%;
+   margin: 15% 0 0 2%;
   }
   .address-title {
       font-size: 2.8em;
-      @include adjust-center(block, auto, auto, 3%, 5%);
+      @include adjust-center(block, auto, auto, 8%, 5%);
   }
   .address {      
-    @include adjust-center(block, auto, auto, 0, 2%); 
+    @include adjust-center(block, 5%, 5%, 2%, 2%); 
     font-size: 1.8em;   
   }
   .hours {

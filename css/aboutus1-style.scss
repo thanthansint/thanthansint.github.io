@@ -1,0 +1,438 @@
+@import "_colors";
+
+@mixin grid-layout($width) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: $width;
+}
+@mixin adjust-center($dis, $left, $right, $top, $bottom) {
+  display: $dis;
+  margin-left: $left;
+  margin-right: $right;
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+@mixin block-display() {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.page-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: minmax(10vh,auto) minmax(70vh, auto) minmax(10vh, auto);
+    grid-template-columns: 1fr;
+} 
+.heading-container{    
+  @include grid-layout(100%);     
+  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
+  grid-template-columns: 1fr;         
+  background-color: $header-background-color; 
+  position: sticky;
+  top: -17%;
+}
+.logo-frame {
+  width: 100%;
+}
+.logo {
+  width: 8%;   
+  @include adjust-center(block, auto, auto, 5px, 1px);       
+}
+.toggle-heading{
+  @include grid-layout(100%);  
+  background: #D10000;        
+  grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));     
+}   
+.menu {
+  color: #ffff;   
+  padding-left: 5%;
+  padding-right:7%; 
+  padding-top: 10px; 
+  padding-bottom: 10px;   
+}
+.toggle-heading a:hover {
+ background: $hover-color;
+ padding: 20px;
+}
+.menu-title{    
+  text-decoration: none;
+  color: $font-border-color;
+  font-size: 1.1em; 
+  font-family: $font;
+  font-weight: bold;  
+}   
+.phone-title {
+  text-decoration: none;
+  color: $font-border-color;
+  font-size: 1.2em;  
+  font-weight: bold;
+}  
+.content {
+  display: grid;
+  grid-template-rows: minmax(5vh, auto) minmax(5vh, auto) minmax(80vh, auto);
+  grid-template-columns: 1fr;
+}
+.image {
+  @include adjust-center(block, 0, 0, 0, 0); 
+  width: 100%;  
+} 
+.image-size {
+  width: 70vw; 
+  height: 70vh; 
+  display: block;  
+  margin-left: auto;
+  margin-right: auto;
+}
+.welcome{  
+  font-size: 2.8em;  
+  font-family: $font;
+  color: $body-color;
+  text-shadow: 3px  2px $text-color;
+  text-align: center;
+  font-weight: bold;
+  padding: 1% 0;  
+}
+.main-content {
+  display: grid;
+  grid-template-rows: 1fr; 
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.b1, .b3, .b4, .b5, .b6, .b7, .b8 {
+  width: 80%;  
+  height: 40vh;
+  @include block-display();
+} 
+.b2 {
+  width: 60%;
+  height: 40vh; 
+  @include block-display(); 
+}
+.sub-title {  
+  font-size: 1.5em;
+  color: $body-color;
+  font-family: $font;
+  font-weight: bolder;
+  padding: 5%;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 15%;
+} 
+.about {
+  color: $hover-color;
+  font-weight: bold;
+}
+.text1, .text2 {
+  //width: 100%;
+  font-size: 1.4em;
+  color: $text-color;
+  font-family: $font;
+  //font-weight: bolder;
+  padding: 10%;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.footer {
+  width: 100%;
+  font-size: 1.5em;
+  font-family: $font;
+  background: $body-color;
+  color: $font-border-color;
+  padding: 2%;
+  text-align: center;
+}
+@media only screen and (max-width: 767px)
+{ 
+.heading-container {  
+  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
+  top: -4%;
+}
+.logo {
+  width: 20%;  
+  margin-top: 1%;
+  margin-bottom: 1%;  
+}
+.toggle-heading {
+  width: 100%;
+  display: block;  
+  background: none; 
+}
+.toggle-heading a:hover {
+  padding: 8px;
+ }
+.menu {
+  text-align: center;
+  margin: 1%;
+  background: $body-color;
+  padding: 5px;
+}
+.menu-title {
+  font-size: 1em;
+}
+.desktoptel {
+  display: none;
+} 
+.image-size {
+  width: 100vw;
+  height: 30vh;
+}
+.welcome-frame {
+  font-size: 0.5em;
+}
+.welcome{
+  font-weight: bold;
+  padding: 15%;
+}
+.main-content {
+  display: block;
+}
+.text1, .text2 {   
+  font-size: 1.2em;
+}
+.b1, .b2, .b4, .b5, .b6, .b7, .b8 {
+  width: 60%;
+  height: 20vh;
+} 
+.b3 {
+  width: 50%;
+  height: 20vh;  
+}
+.sub-title {  
+  font-size: 1.4em; 
+}
+.about {
+  text-align: center;
+}
+.footer{
+  margin-top: 10%;
+  font-size: 1.2em;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+{ .heading-container {
+  top: -10%;
+}
+  .logo {
+    width: 20%;
+  }
+  .toggle-heading {
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+   }
+  .menu-title {
+    font-size: 1.2em;
+  }   
+  .desktoptel {
+    display: none;
+  }  
+  .main-content { 
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(33vw, 1fr)); 
+  }
+  .image-size {
+    width: 80vw;
+    height: 30vh;
+  }
+  .welcome {
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-size: 2.3em;
+    @include block-display();
+  }   
+  .text1, .text2 { 
+    width: 100%;  
+    font-size: 1.3em;
+  }
+  .b1, .b2, .b3, .b5, .b6, .b7, .b8 {
+    width: 50%;
+    height: 10vh;
+  } 
+  .b4 {
+    width: 30%;
+    height: 10vh;
+  }
+  .sub-title {
+    font-size: 1.6em; 
+  }  
+  .footer{
+    margin-top: 5%;
+    width: 100%;
+    font-size: 1.8em;
+  }
+}
+@media only screen and (min-width:1024px) and (max-width: 1200px) {
+      
+  .heading-container {    
+    top: -13%;
+  } 
+  .toggle-heading {
+    grid-template-columns: repeat(auto-fill, minmax(18vw, 1fr));   
+  }
+  .toggle-heading a:hover {
+    padding: 8px;
+   } 
+  .logo {
+    width: 25%;
+  }
+  .menu-title {
+    font-size: 1.5em;
+  }
+  .phone-title {
+    font-size: 1.5em;
+  }    
+  .desktoptel {
+    display: none;
+  }   
+  .main-content { 
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(33vw, 1fr)); 
+  }
+  .image-size {
+    width: 80vw;
+    height: 30vh;
+  }
+  .welcome {
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    font-size: 2.3em;
+    @include block-display();
+  }   
+  .text1, .text2 { 
+    width: 100%;  
+    font-size: 1.3em;
+  }
+  .b1, .b3, .b5, .b6, .b7, .b8 {
+    width: 60%;
+    height: 10vh;
+  } 
+  .b4, .b2 {
+    width: 40%;
+    height: 10vh;
+  }
+  .sub-title {
+    font-size: 1.6em; 
+  }   
+  .footer{
+    margin-top: 5%;
+    width: 100%;
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width:1201px) and (max-width:1366px){
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -17%;
+  }
+  .toggle-heading {
+    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));   
+  }
+  .logo {
+    width: 8%;
+  }
+  .menu-title {
+    font-size: 1.3em;
+  }
+  .phone-title {
+    font-size: 1.4em;
+  } 
+  .main-content { 
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr)); 
+  }
+  .image-size {
+    width: 70vw;
+    height: 70vh;
+  }
+  .welcome {
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    font-size: 2.3em;
+    @include block-display();
+  }   
+  .text1, .text2 { 
+    width: 100%;  
+    font-size: 1.3em;
+  }
+  .b1, .b3, .b5, .b6, .b7, .b8 {
+    width: 60%;
+    height: 10vh;
+  } 
+  .b4, .b2 {
+    width: 40%;
+    height: 10vh;
+  }
+  .sub-title {
+    font-size: 1.6em; 
+  }    
+  .footer{
+    font-size: 1.8em;
+  }
+}
+@media only screen and (min-width:1367px){
+  .mobiletel {
+    display: none;
+  }
+  .heading-container {
+    top: -6%;
+  }
+  .toggle-heading {
+    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));   
+  }
+  .logo {
+    width: 8%;
+  }
+  .menu-title {
+    font-size: 1.1em;
+  }
+  .phone-title {
+    font-size: 1.2em;
+  } 
+  .main-content { 
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr)); 
+  }
+  .image-size {
+    width: 90vw;
+    height: 60vh;
+  }
+  .welcome {
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    font-size: 2.3em;
+    @include block-display();
+  }   
+  .text1, .text2 { 
+    width: 100%;  
+    font-size: 1.3em;
+  }
+  .b1, .b3, .b5, .b6, .b7, .b8 {
+    width: 60%;
+    height: 10vh;
+  } 
+  .b4, .b2 {
+    width: 40%;
+    height: 10vh;
+  }
+  .sub-title {
+    font-size: 1.6em; 
+  }    
+  .footer{
+    font-size: 1.8em;
+  }
+}

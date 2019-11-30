@@ -1,4 +1,4 @@
-@import "colors";
+@import "_colors";
 
 @mixin grid-layout($width) {
     display: grid;
@@ -29,38 +29,39 @@
   .page-container {
       width: 100%;
       display: grid;
-      grid-template-rows: minmax(20vh,auto) minmax(70vh, auto) minmax(10vh, auto);
+      grid-template-rows: minmax(10vh,auto) minmax(70vh, auto) minmax(10vh, auto);
       grid-template-columns: 1fr;
   } 
   .heading-container{    
     @include grid-layout(100%);     
-    grid-template-rows: minmax(10vh, auto) minmax(7vh, auto);
+    grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
     grid-template-columns: 1fr;         
     background-color: $header-background-color; 
     position: sticky;
-    top: -34%;
+    top: -16%;
+    z-index: 3;
   }
   .logo-frame {
-    width: 100%;
+    width: 100%;     
   }
   .logo {
-    width: 10%;   
-    @include adjust-center(block, auto, auto, 5px, 5px);       
+    width: 8%;   
+    @include adjust-center(block, auto, auto, 5px, 1px);       
   }
   .toggle-heading {
     width: 100%;
     background: #D10000; 
     display: grid;      
-    grid-template-columns: repeat(auto-fill, minmax(18vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));   
     justify-items: center;
-    align-items: center;
+    align-items: center;      
   }   
   .menu {
     color: #ffff;   
     padding-left: 5%;
     padding-right:7%; 
-    padding-top: 20px; 
-    padding-bottom: 20px;   
+    padding-top: 10px; 
+    padding-bottom: 10px;   
   }
   .toggle-heading a:hover {
    background: $hover-color;
@@ -69,30 +70,59 @@
   .menu-title{    
     text-decoration: none;
     color: $font-border-color;
-    font-size: 1em; 
+    font-size: 1.1em; 
     font-family: $font;
     font-weight: bold; 
+    
   }   
   .phone-title {
     text-decoration: none;
     color: $font-border-color;
-    font-size: 1.1em;  
+    font-size: 1.2em;  
     font-weight: bold;
   } 
   .content {
     width: 100%;
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;     
+  }    
+  .message {
+    width: 80%;
+    position: absolute;
+    top: 9%;
+    left: 13%;   
+    font-size: 2.5em;
+    color: $hover-color;
+    font-family: $font;
+    font-weight: bolder; 
+    text-align: center;   
+  }
+  .italian-message {
+    font-size: 1.2em;
+    color: $body-color;  
+    z-index: 2;
+  }
+  .here-message {
+    font-size: 2em;
+    color: $text-color;
+    padding: 1%;
+    background-color: $font-border-color;
+    border-radius: 20px;
+    margin-top: 10%;
   }
   .image {
     @include adjust-center(block, 0, 0, 0, 1%);
+    position: relative;
+    z-index: 1;
   }
   .image-size {
-    width: 100%;     
+    width: 100%;
   }    
   .order {    
-    width: 100%;     
+    width: 100%;  
+    padding-top: 5%;   
+    padding-bottom: 5%;
   }   
   .order-now {   
     color: $body-color;     
@@ -104,7 +134,7 @@
     @include adjust-center(inline-block, 20%, 0, 2%, 2%);             
   }  
   .fa-hand-point-right {
-    font-size: 40px;
+    font-size: 50px;
     margin-right: 7%;
   }
   .fa-hand-point-down {
@@ -121,38 +151,46 @@
     font-family: $font;
     font-weight: bold;
     border: 1px solid $font-border-color;
+    border-radius: 25px;
     padding: 15px;          
     color: $font-border-color;
   }  
   .video {
-    width: 100%; 
+    width: 70%; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }  
   .video-link{
-    width: 55%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
     margin-top: 2%;
-    background: $body-color;
+    //background: $body-color;
+    border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
     }
   .video-link-text {
-    font-size: 1.7em;
+    font-size: 2.2em;
     font-family: $font;
-    color: $font-border-color;    
+    color: $body-color; 
+    font-weight: bold;
+    text-decoration: none;   
   }  
-  .background-image {
+  .background-image2 {
     width: 100%;
     background-image: url("../images/red-black-background-1.jpg");
     background-repeat:no-repeat;
     background-size:cover;     
   } 
   .bunner {
-    width: 70%;
-    padding:1%;
-    background: $body-color;
+    width: 50%;
+    padding-bottom: 3%;
+    //background: $body-color;
+    border-bottom: 1px solid $body-color;
     font-size: 1.5em;
     color: $font-border-color;
     text-align: center;
@@ -160,6 +198,17 @@
     font-weight: bolder;
     @include adjust-center(block, auto, auto, 3%, 2%); 
   }    
+  .bunner4 {
+    width: 50%;
+    padding-bottom:3%;
+    font-size: 1.5em;
+    color: $font-border-color;
+    text-align: center;
+    font-family: $font;
+    font-weight: bolder;
+    @include adjust-center(block, auto, auto, 3%, 2%); 
+
+  }
   .bunner-text {
     width: 70%;
     color: $font-border-color;
@@ -183,12 +232,13 @@
 @media only screen and (max-width: 767px)
 { 
 .heading-container {
-  top: -37%;
+  grid-template-rows: minmax(10vh, auto) minmax(5vh, auto);
+  top: -10%;
 }
 .logo {
   width: 20%; 
-  margin-top: 5%;
-  margin-bottom: 2%;  
+  margin-top: 1%;
+  margin-bottom: 1%;  
 }
 .toggle-heading {
   width: 100%;
@@ -202,16 +252,21 @@
   text-align: center;
   margin: 1%;
   background: $body-color;
-  padding: 10px;
+  padding: 5px;
 }
 .menu-title {
-  font-size: 0.8em;  
-}
-.phone-title {
-  font-size: 1.8em;
+  font-size: 1em;  
 }
 .desktoptel {
   display: none;
+}
+.message {  
+  top: 0;   
+  font-size: 1em;
+  text-align: center;
+}
+.italian-message {
+  font-size: 1.4em;
 } 
 .image{
   margin-left: 1%;
@@ -241,7 +296,7 @@
 .fa-hand-point-down {
   font-size: 35px;
   visibility: visible;
-  margin-left: 33%;
+  margin-left: 25%;
   margin-bottom: 5%;
 }
 .delivery {  
@@ -250,7 +305,6 @@
   text-align: center;
   @include adjust-center(block, auto, auto, 1%, 2%);  
 }
-
 .video {
   @include adjust-center(block, auto, auto, 3%, 4%);  
   width: 100%; 
@@ -266,9 +320,16 @@
 .video-link-text {
   font-size: 1.3em;
 }
-.bunner {
-  width: 80%;
+.bunner  {
+  width: 70%;
   font-size: 1em;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.bunner4 {  
+  font-size: 1em;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 .bunner-text {
   width: 80%;
@@ -291,10 +352,10 @@
   top: -14%;
   }
   .logo {
-    width: 20%;
+    width: 20%;     
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
   }
   .toggle-heading a:hover {
     padding: 8px;
@@ -302,11 +363,27 @@
   .menu-title {
     font-size: 1.2em;
   }
-  .phone-title {
+  /*.phone-title {
     font-size: 1.2em;
-  }
+  }*/
   .desktoptel {
     display: none;
+  }
+  .message {
+    width: 85%;
+    left: 3%;  
+    font-size: 2em;
+  }
+  .italian-message {
+   font-size: 1.5em;
+  } 
+  .video-link {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video-link-text {
+    font-size: 2em;
   }
 .order {    
   width: 100%;     
@@ -323,6 +400,11 @@
   margin-left: 33%;
   margin-bottom: 5%;
 }
+.bunner, .bunner4 {
+  width: 70%;
+  padding-top: 5%; 
+  padding-bottom: 5%;
+}
 .delivery {  
   width: 23%;
   //padding: 5%;
@@ -330,14 +412,14 @@
 }
 }
 @media only screen and (min-width:1024px) and (max-width: 1200px) {
-  .mobiletel {
+  .desktoptel {
     display: none;
   }    
   .heading-container {
-    top: -18%;
+    top: -17%;
   } 
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));   
   }
   .toggle-heading a:hover {
     padding: 8px;
@@ -351,16 +433,36 @@
   .phone-title {
     font-size: 1.5em;
   }
+  .message {
+    width: 85%;
+    left: 3%;  
+    font-size: 2em;
+  }
+  .italian-message {
+   font-size: 1.5em;
+  } 
+  .video-link {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video-link-text {
+    font-size: 2.5em;
+  }
   .order {    
     width: 100%;     
   }   
   .order-now {         
-    @include adjust-center(inline-block, 3%, 0, 2%, 2%);             
+    @include adjust-center(inline-block, 10%, 0, 2%, 2%);             
   }  
   .delivery {  
     width: 23%;
     //padding: 5%;
     @include adjust-center(inline-block, 1%, 0, 2%, 2%);            
+  }
+  .bunner, .bunner4 {
+    padding-top: 5%; 
+    padding-bottom: 5%;
   }
   .footer{
     font-size: 2em;
@@ -369,16 +471,16 @@
 @media only screen and (min-width:1201px){
   .mobiletel {
     display: none;
-  }
+  }  
   .heading-container {
-    top: -32%;
+    top: -16%;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(17vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));   
   }
   .logo {
-    width: 15%;
-  }
+    width: 8%; 
+  }  
   .menu-title {
     font-size: 1.1em;
   }
