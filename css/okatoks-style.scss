@@ -38,7 +38,7 @@
     grid-template-columns: 1fr;         
     background-color: $header-background-color; 
     position: sticky;
-    top: -16%;
+    top: -17vh;  
     z-index: 3;
   }
   .logo-frame {
@@ -54,7 +54,7 @@
     display: grid;      
     grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));   
     justify-items: center;
-    align-items: center;      
+    align-items: center;        
   }   
   .menu {
     color: #ffff;   
@@ -160,6 +160,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 60vh;
+    object-fit: cover;
   }  
   .video-link{
     width: 50%;
@@ -377,8 +379,14 @@
   .italian-message {
    font-size: 1.5em;
   } 
+  .video {
+    width: 80vw;
+    height: 40vh;
+    object-fit: cover;
+  }
   .video-link {
-    width: 80%;
+    width: 90vw;
+    height: 10vh;   
     margin-left: auto;
     margin-right: auto;
   }
@@ -441,6 +449,11 @@
   .italian-message {
    font-size: 1.5em;
   } 
+  .video {
+    width: 80vw;
+    height: 40vh;
+    object-fit: cover;
+  }
   .video-link {
     width: 80%;
     margin-left: auto;
@@ -472,11 +485,11 @@
   .mobiletel {
     display: none;
   }  
-  .heading-container {
-    top: -16%;
+  .heading-container {    
+    top: -17vh;
   }
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));       
   }
   .logo {
     width: 8%; 

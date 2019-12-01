@@ -74,7 +74,7 @@
   text-decoration: none;
   color: white;
   font-size: 1.1em;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -92,7 +92,9 @@
 
 .image {
   width: 90vw;
-  height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 60vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -112,7 +114,7 @@
 .message {
   font-size: 3em;
   color: #CF0101;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: bolder;
   padding-top: 5%;
   padding-bottom: 6%;
@@ -128,7 +130,7 @@
 .address-title {
   width: 100%;
   font-size: 2em;
-  font-family: serif;
+  font-family: sans-serif;
   color: #CF0101;
   margin-top: 15%;
   margin-bottom: 10%;
@@ -138,7 +140,7 @@
 
 .address {
   font-size: 1.5em;
-  font-family: serif;
+  font-family: sans-serif;
   color: black;
   text-align: center;
   padding: 3% 0;
@@ -161,7 +163,7 @@
 
 .date-time {
   font-size: 1em;
-  font-family: serif;
+  font-family: sans-serif;
   color: black;
   font-weight: bold;
   padding: 1% 0;
@@ -169,7 +171,7 @@
 
 .footer {
   font-size: 1.5em;
-  font-family: serif;
+  font-family: sans-serif;
   color: white;
   width: 100%;
   background: #CF0101;
@@ -218,8 +220,10 @@
     height: 30vh;
   }
   .image {
-    width: 100%;
-    height: 30%;
+    width: 90vw;
+    height: 30vh;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-bottom: 5%;
   }
   .address-title {
@@ -280,13 +284,17 @@
     font-size: 1.2em;
   }
   .image {
-    width: 100%;
-    height: 30%;
+    width: 90vw;
+    height: 30vh;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-bottom: 5%;
   }
   .map {
-    width: 60%;
-    height: 30%;
+    width: 90vw;
+    height: 30vh;
+    -o-object-fit: cover;
+       object-fit: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -335,7 +343,7 @@
   }
   .date-time {
     font-size: 1.2em;
-    font-family: serif;
+    font-family: sans-serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;
@@ -379,8 +387,10 @@
     font-size: 4em;
   }
   .image {
-    width: 100%;
-    height: 30%;
+    width: 90vw;
+    height: 30vh;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-bottom: 2%;
   }
   .address-hours {
@@ -390,7 +400,7 @@
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   }
   .location {
-    width: 100%;
+    width: 50vw;
     margin: 2% 0 0 2%;
     padding-top: 20%;
   }
@@ -411,7 +421,7 @@
     font-size: 1.8em;
   }
   .hours {
-    width: 100%;
+    width: 50vw;
     padding-top: 10%;
     border-top: none;
     justify-items: center;
@@ -421,7 +431,7 @@
   }
   .date-time {
     font-size: 1.5em;
-    font-family: serif;
+    font-family: sans-serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;
@@ -461,7 +471,7 @@
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   }
   .location {
-    width: 100%;
+    width: 50vw;
     margin: 15% 0 0 2%;
   }
   .address-title {
@@ -481,7 +491,7 @@
     font-size: 1.8em;
   }
   .hours {
-    width: 100%;
+    width: 50vw;
     border-top: none;
     border-left: 2px solid #CF0101;
     justify-items: center;
@@ -491,7 +501,7 @@
   }
   .date-time {
     font-size: 1.5em;
-    font-family: serif;
+    font-family: sans-serif;
     color: black;
     font-weight: bold;
     padding: 1% 0;

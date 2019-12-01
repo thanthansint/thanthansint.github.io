@@ -31,6 +31,9 @@
     margin: 0;
     box-sizing: border-box;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   .page-container {
       width: 100%;
       display: grid;
@@ -96,8 +99,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10vh; 
-    margin-top: 2%; 
-    height: 10vh;
+    margin-top: 5vh; 
+    height: 10vh;   
     position: relative;   
   }
   .scroll1 {
@@ -116,11 +119,11 @@
     right: 2%;
   }
   .wing-brownie {
-    @include font-setting(1.2em, Cursive, $body-color);
-    padding: 0 10px;
+    @include font-setting(1.2em, $font, $body-color);   
+    padding: 10px 10px;
     border: 2px solid $text-color;
-    border-radius: 25px;
-    text-decoration: none;
+    border-radius: 10px;
+    text-decoration: none;   
   }
   .pizza-title-setting {  
     width: 100%;    
@@ -130,14 +133,15 @@
     border-bottom: thick double $body-color;
     text-align: left;    
     font-weight: bold; 
-    font-size: 1.7em;    
+    font-size: 1.7em;  
   }  
   .pizza-items {
     @include grid-layout(100%);
     grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
     grid-template-rows: 1fr;
     justify-items: center;
-    align-items: center;   
+    align-items: center;
+    margin-top: 5vh;   
   }
   .wing-title {
     display: grid;
@@ -161,7 +165,8 @@
     grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
     grid-template-rows: 1fr;
     justify-items: center;
-    align-items: center;   
+    align-items: center;  
+    margin-top: 5vh;    
   }
   .brownie-title {
     display: grid;
@@ -185,12 +190,15 @@
     grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
     grid-template-rows: 1fr;
     justify-items: center;
-    align-items: center;   
+    align-items: center; 
+    margin-top: 5vh;     
   }
   .order {    
     width: 100%;    
-    padding-left: 25%; 
+    //padding-left: 25%; 
     margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
   }   
   .order-now {   
     color: $body-color;     
@@ -220,19 +228,17 @@
     font-size: 1.2em;
   }  
   .image-boundary {
-    width: 90%;
-    //height: 85%;    
+    @include grid-layout(20vw);
+    height: 62vh;
+    grid-template-rows: minmax(3vh, auto) minmax(10vh, auto) mminmax(5vh, auto) minmax(3vh, auto);      
     border: 2px solid $header-background-color;
     border-radius: 25px;
-    margin-left: 10%;  
-    margin-right: 10%;
-    padding: 2%;
-    margin-top: 10%;
+    row-gap: 2%;    
     margin-bottom: 10%;
   }
   .image {
-    width: 90%;
-    height: 75%;
+    width: 18vw;
+    height: 35vh;
     display: block;
     margin-bottom: 3%;
     margin-left: auto;
@@ -247,10 +253,7 @@
   }
   .price-description {
     @include pizza-text(100%, 1em, $body-color, none, $font);
-  } 
-  .pizza-height {
-  height: 47vh;
-  }
+  }   
   .add {
     width: 17vw;
     font-size: 1em;
@@ -260,9 +263,10 @@
     font-family: $font;    
     padding: 13px;          
     color: $font-border-color;
-    margin-top: 25%;
-   margin-left: auto;
-   margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: auto;
+    margin-right: auto;
   }
   .footer {
     width: 100%;
@@ -312,71 +316,66 @@
   height: 10vh;   
 }
 .pizza-title-setting {
-  width: 100%;    
-  padding-top: 1%;
+  width: 100%;  
   padding-left: 5%;
   color: $text-color;
   border-bottom: thick double $body-color;    
   text-align: left;    
   font-weight: bold; 
   font-size: 1.2em; 
-  margin-top: 4%; 
-  margin-left: auto;
-  margin-right: auto;    
+  margin-top: 7%;     
 }
 .pizza-items {
   display: block;
+  margin-top: 10%;
 }
 .wing-title {  
-  margin-top: 2%; 
+  margin-top: 10%; 
   height: 10vh;   
 }
 .wing-title-setting {
   width: 100%;    
-  padding-top: 1%;
+  //padding-top: 1%;
   color: $text-color;
   border-bottom: thick double $body-color;    
   text-align: left;     
   font-weight: bold; 
   font-size: 1.2em; 
-  margin-top: 4%; 
-  margin-left: auto;
-  margin-right: auto;  
+  margin-top: 7%;     
 }
 .wing-items {
-  display: block;  
+  display: block; 
+  margin-top: 10%; 
 }
 .brownie-title {  
-  margin-top: 2%; 
+  margin-top: 10%; 
   height: 10vh;   
 }
 .brownie-title-setting {
-  width: 100%;    
-  padding-top: 1%;
+  width: 100%; 
   color: $text-color;
   border-bottom: thick double $body-color;    
   text-align: left;      
   font-weight: bold; 
   font-size: 1.2em; 
-  margin-top: 4%; 
-  margin-left: auto;
-  margin-right: auto;  
+  margin-top: 7%;    
 }
 .brownie-items {
-  display: block;   
+  display: block; 
+  margin-top: 10%;  
 }
 .image-boundary {
-  width: 100%;
-  margin-top: 5%;
+  width: 65vw;
+  border: 2px solid $header-background-color;
+  border-radius: 25px;
+  display: grid;
+  row-gap: 2vh;  
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
-.pizza-height {
-  height: 48vh;
-  }
 .image {
- width: 90%;
-  height: 85%;
+ width: 50vw;
+  height: 25vh;
 }
 .p-name{
   font-size: 1.3em;
@@ -388,17 +387,21 @@
 }
 .add {
   width: 40vw;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 .order-now {  
   margin-top: 1%;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 .delivery { 
   width: 50%;
   display: block; 
   margin-top: 5%; 
   font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
 } 
 .fa-hand-point-right {
   font-size: 50px;
@@ -505,18 +508,17 @@
     grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));   
   } 
   .image {
-    width: 100%;
-    height: 78%;
+    width: 30vw;
+    height: 20vh;
    }
    .image-boundary {
-    width: 90%;
-    height: 85%;
+    width: 35vw;
+    height: 44vh;
+    display: grid;
+    row-gap: 2vh;  
     margin-left: auto;
     margin-right: auto;
-  }  
-  .pizza-height {
-    height: 30vh;
-  }
+  }    
   .p-name{
     font-size: 1.5em;
   }
@@ -554,8 +556,7 @@
     font-family: $font;
     padding: 15px;          
     color: $font-border-color;
-    font-size: 1.2em;
-    
+    font-size: 1.2em;    
   }  
   .footer-frame {
     margin-top: 5%;
@@ -564,7 +565,7 @@
     font-size: 1.2em;
   }
 }
-@media only screen and (min-width:1024px) and (max-width: 1200px) {
+@media only screen and (min-width:1024px) and (max-width: 1365px){
   .desktoptel {
     display: none;
   }    
@@ -608,9 +609,7 @@
     text-align: left;      
     font-weight: bold; 
     font-size: 2.5em; 
-    margin-top: 4%; 
-    margin-left: auto;
-    margin-right: auto;  
+    margin-top: 7%; 
   }
   .pizza-items {
     grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));  
@@ -628,9 +627,7 @@
     text-align:left;      
     font-weight: bold; 
     font-size: 2.5em; 
-    margin-top: 4%; 
-    margin-left: auto;
-    margin-right: auto;  
+    margin-top: 7%;      
   }
   .wing-items {
     grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));   
@@ -647,26 +644,22 @@
     text-align: left;     
     font-weight: bold; 
     font-size: 2.5em; 
-    margin-top: 4%; 
-    margin-left: auto;
-    margin-right: auto;  
+    margin-top: 7%;   
   }
   .brownie-items {
     grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));   
   } 
   .image {
-    width: 100%;
-    height: 57%;
+    width: 25vw;
+    height: 15vh;
    }
    .image-boundary {
-    width: 90%;
-    height: 90%;
+    width: 28vw;
+    height: 44vh;
     margin-left: auto;
     margin-right: auto;
-  }  
-  .pizza-height {
-    height: 34vh;
-  }
+    row-gap: 2vh;
+  }    
   .p-name {
     font-size: 2em;
     padding-bottom: 3%;
@@ -690,13 +683,38 @@
     font-size: 2em;
   }
 }
-@media only screen and (min-width:1201px){
+@media only screen and (min-width:1201px) and (max-width:1365px){
   .mobiletel {
     display: none;
   }   
   .fa-hand-point-down {
     visibility: hidden;
   } 
+  .image {
+    width: 25vw;
+    height: 15vh;
+   }
+   .image-boundary {
+    width: 28vw;
+    height: 44vh;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 2vh;
+  } 
+}
+@media only screen and (min-width:1366px) and (max-width:1366px){
+  .mobiletel {
+    display: none;
+  } 
+  .fa-hand-point-down {
+    visibility: hidden;
+  }
+  .order{
+    margin-left: 20vw;
+  }
+  .pizza-title {
+    margin-top: 15vh;
+  }
 }
 @media only screen and (min-width:1367px){
   .mobiletel {
@@ -706,30 +724,27 @@
     visibility: hidden;
   } 
   .image-boundary {
-    width: 90%;
-    height: 85%;
+    width: 28vw;
+    height: 40vh;
     margin-left: auto;
     margin-right: auto;      
   }
   .image {
-   width: 100%;
-   height: 70%;
+   width: 25vw;
+   height: 20vh;
+   object-fit: cover;
   }
   .pizza-items {
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   }
   .wing-items {
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   } 
   .brownie-items {
-    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
-  }
-
-  .pizza-height {
-    height: 25vh;
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   }
   .add {
-    margin-top: 25%;
+    margin-top: 1vh;
   }
   .footer{
     font-size: 1.8em;

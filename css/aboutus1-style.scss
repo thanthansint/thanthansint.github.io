@@ -93,10 +93,9 @@
   font-size: 2.8em;  
   font-family: $font;
   color: $body-color;
-  text-shadow: 3px  2px $text-color;
   text-align: center;
   font-weight: bold;
-  padding: 1% 0;  
+  padding: 5% 0;  
 }
 .main-content {
   display: grid;
@@ -105,16 +104,12 @@
   margin-left: 10%;
   margin-right: 10%;
 }
-.b1, .b3, .b4, .b5, .b6, .b7, .b8 {
-  width: 80%;  
-  height: 40vh;
+.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+  width: 15vw;  
+  height: 15vh;
+  object-fit: contain;
   @include block-display();
 } 
-.b2 {
-  width: 60%;
-  height: 40vh; 
-  @include block-display(); 
-}
 .sub-title {  
   font-size: 1.5em;
   color: $body-color;
@@ -130,15 +125,12 @@
   font-weight: bold;
 }
 .text1, .text2 {
-  //width: 100%;
+  width: 25vw;
   font-size: 1.4em;
   color: $text-color;
   font-family: $font;
-  //font-weight: bolder;
   padding: 10%;
-  text-align: left;
-  margin-left: 5%;
-  margin-right: 5%;
+  text-align: left;  
 }
 .footer {
   width: 100%;
@@ -183,6 +175,7 @@
 .image-size {
   width: 100vw;
   height: 30vh;
+  object-fit: cover;
 }
 .welcome-frame {
   font-size: 0.5em;
@@ -194,17 +187,15 @@
 .main-content {
   display: block;
 }
-.text1, .text2 {   
+.text1, .text2 {  
+  width: 80vw; 
   font-size: 1.2em;
 }
-.b1, .b2, .b4, .b5, .b6, .b7, .b8 {
-  width: 60%;
-  height: 20vh;
+.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+  width: 20vw;
+  height: 15vh;
+  object-fit: contain;
 } 
-.b3 {
-  width: 50%;
-  height: 20vh;  
-}
 .sub-title {  
   font-size: 1.4em; 
 }
@@ -245,24 +236,21 @@
     height: 30vh;
   }
   .welcome {
-    width: 100%;
+    width: 100vw;
     margin-top: 8%;
     margin-bottom: 8%;
     font-size: 2.3em;
     @include block-display();
   }   
   .text1, .text2 { 
-    width: 100%;  
+    width: 40vw;  
     font-size: 1.3em;
   }
-  .b1, .b2, .b3, .b5, .b6, .b7, .b8 {
-    width: 50%;
-    height: 10vh;
-  } 
-  .b4 {
-    width: 30%;
-    height: 10vh;
-  }
+  .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+    width: 20vw;
+    height: 15vh;
+    object-fit: contain;
+  }   
   .sub-title {
     font-size: 1.6em; 
   }  
@@ -279,7 +267,7 @@
     top: -17%;
   } 
   .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(18vw, 1fr));   
+    grid-template-columns: repeat(auto-fill, minmax(21vw, 1fr));   
   }
   .toggle-heading a:hover {
     padding: 8px;
@@ -305,7 +293,8 @@
     height: 30vh;
   }
   .welcome {
-    width: 100%;
+    width: 100vw;
+    object-fit: cover;
     margin-top: 8%;
     margin-bottom: 5%;
     font-size: 2.3em;
@@ -315,14 +304,11 @@
     width: 100%;  
     font-size: 1.3em;
   }
-  .b1, .b3, .b5, .b6, .b7, .b8 {
-    width: 60%;
-    height: 10vh;
-  } 
-  .b4, .b2 {
-    width: 40%;
-    height: 10vh;
-  }
+  .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+    width: 20vw;
+    height: 15vh;
+    object-fit: contain;
+  }   
   .sub-title {
     font-size: 1.6em; 
   }   
@@ -332,60 +318,8 @@
     font-size: 2em;
   }
 }
-@media only screen and (min-width:1201px) and (max-width:1366px){
-  .mobiletel {
-    display: none;
-  }
-  .heading-container {
-    top: -17%;
-  }
-  .toggle-heading {
-    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));   
-  }
-  .logo {
-    width: 8%;
-  }
-  .menu-title {
-    font-size: 1.3em;
-  }
-  .phone-title {
-    font-size: 1.4em;
-  } 
-  .main-content { 
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr)); 
-  }
-  .image-size {
-    width: 70vw;
-    height: 70vh;
-  }
-  .welcome {
-    width: 100%;
-    margin-top: 8%;
-    margin-bottom: 5%;
-    font-size: 2.3em;
-    @include block-display();
-  }   
-  .text1, .text2 { 
-    width: 100%;  
-    font-size: 1.3em;
-  }
-  .b1, .b3, .b5, .b6, .b7, .b8 {
-    width: 60%;
-    height: 10vh;
-  } 
-  .b4, .b2 {
-    width: 40%;
-    height: 10vh;
-  }
-  .sub-title {
-    font-size: 1.6em; 
-  }    
-  .footer{
-    font-size: 1.8em;
-  }
-}
-@media only screen and (min-width:1367px){
+
+@media only screen and (min-width:1366px){
   .mobiletel {
     display: none;
   }
@@ -410,7 +344,8 @@
   }
   .image-size {
     width: 90vw;
-    height: 60vh;
+    height: 70vh;
+    object-fit: cover;
   }
   .welcome {
     width: 100%;
@@ -423,14 +358,11 @@
     width: 100%;  
     font-size: 1.3em;
   }
-  .b1, .b3, .b5, .b6, .b7, .b8 {
-    width: 60%;
-    height: 10vh;
-  } 
-  .b4, .b2 {
-    width: 40%;
-    height: 10vh;
-  }
+  .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+    width: 20vw;
+    height: 20vh;
+    object-fit: contain;
+  }    
   .sub-title {
     font-size: 1.6em; 
   }    
